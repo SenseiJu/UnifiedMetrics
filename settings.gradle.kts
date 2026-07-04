@@ -29,6 +29,7 @@ include(modulePrefix + platformPrefix + "bukkit")
 //include(modulePrefix + platformPrefix + "minestom")
 include(modulePrefix + platformPrefix + "velocity")
 include(modulePrefix + platformPrefix + "bungee")
+include(modulePrefix + platformPrefix + "waterdog")
 include(modulePrefix + platformPrefix + "fabric")
 
 include(modulePrefix + driverPrefix + "influx")
@@ -43,6 +44,7 @@ project(modulePrefix + platformPrefix + "bukkit").projectDir = File(platformsDir
 //project(modulePrefix + platformPrefix + "minestom").projectDir = File(platformsDir, "minestom")
 project(modulePrefix + platformPrefix + "velocity").projectDir = File(platformsDir, "velocity")
 project(modulePrefix + platformPrefix + "bungee").projectDir = File(platformsDir, "bungee")
+project(modulePrefix + platformPrefix + "waterdog").projectDir = File(platformsDir, "waterdog")
 project(modulePrefix + platformPrefix + "fabric").projectDir = File(platformsDir, "fabric")
 
 val driversDir = File(rootDir, "drivers")

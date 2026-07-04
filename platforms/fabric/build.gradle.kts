@@ -39,14 +39,22 @@ dependencies {
     api(project(":unifiedmetrics-core"))
 
     transitiveInclude(project(":unifiedmetrics-core"))
+}
 
+// Resolve the transitive dependencies lazily in afterEvaluate. Resolving the
+// configuration eagerly inside the dependencies block "uses" the repositories
+// before Fabric Loom (1.10+) applies its content filter to the Mojang
+// repository, causing "Cannot mutate content repository descriptor 'Mojang'
+// after repository has been used". By afterEvaluate, Loom has finished its
+// repository setup, so resolution is safe.
+afterEvaluate {
     transitiveInclude.incoming.artifacts.forEach {
         val dependency: Any = when (val component = it.id.componentIdentifier) {
             is ProjectComponentIdentifier -> project(component.projectPath)
             else -> component.toString()
         }
 
-        include(dependency)
+        dependencies.add("include", dependency)
     }
 }
 

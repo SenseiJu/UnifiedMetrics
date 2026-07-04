@@ -29,6 +29,7 @@ Click [here](https://unifiedmetrics-demo.cubxity.dev) for live preview!
 - Minestom
 - Velocity
 - BungeeCord
+- WaterdogPE
 
 **Metrics:**
 
